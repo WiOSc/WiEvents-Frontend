@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
+import { API_BASE_URL } from "../config";
 
 const QuizQuestion5 = () => {
   const [answer, setAnswer] = useState("");
@@ -31,7 +32,7 @@ const QuizQuestion5 = () => {
 
       try {
         // Send PATCH request to update participant's endTime
-        const response = await fetch(`/participant/${participantId}`, { 
+        const response = await fetch(`${API_BASE_URL}/participant/${participantId}`, { 
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -44,7 +45,7 @@ const QuizQuestion5 = () => {
         }
   
         // Navigate to home or leaderboard after updating
-        navigate("/");
+        navigate(`/`);
       } catch (error) {
         console.error("Failed to log event end time:", error);
         setError("Error ending event. Please try again.");

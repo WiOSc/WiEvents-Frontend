@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Quiz.module.css';
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config";
 
 const Quiz = () => {
   const [newParticipant, setNewParticipant] = useState({
@@ -24,7 +25,7 @@ const Quiz = () => {
     console.log("Start Time:", startTime);
 
     try {
-      const response = await fetch("/participant", {
+      const response = await fetch(`${API_BASE_URL}/participant`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +48,7 @@ const Quiz = () => {
       localStorage.setItem("participantId", data._id);
       console.log("Stored participantId:", localStorage.getItem("participantId"));
 
-      navigate("/quiz-question-1");
+      navigate(`/quiz-question-1`);
     } catch (error) {
       console.error("Error:", error);
       alert(`Error submitting participant: ${error.message}`);

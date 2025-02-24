@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
+import { API_BASE_URL } from "../config";
 
 const QuizQuestion2 = () => {
   const [answer, setAnswer] = useState("");
@@ -18,7 +19,7 @@ const QuizQuestion2 = () => {
 
   const handleSubmit = () => {
     if (answer.trim().toLowerCase() === "paris") {
-      navigate("/quiz-question-3"); // Go to question 2
+      navigate(`/quiz-question-3`); // Go to question 2
     } else {
       setError("Incorrect answer! Try again.");
     }
