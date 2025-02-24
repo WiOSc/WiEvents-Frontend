@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Route,Routes } from "react-router-dom";
 
 import Quiz from "./pages/Quiz";
-import LeaderBoard from "./pages/LeaderBoard";
-import QuizQuestion1 from "./pages/QuizQuestion1";
-import QuizQuestion2 from "./pages/QuizQuestion2";
-import QuizQuestion3 from "./pages/QuizQuestion3";
-import QuizQuestion4 from "./pages/QuizQuestion4";
-import QuizQuestion5 from "./pages/QuizQuestion5";
-import Navbar from "./components/Navbar";
+import LeaderBoard from "./pages/LeaderBoard.jsx";
+import QuizQuestion1 from "./pages/QuizQuestion1.jsx";
+import QuizQuestion2 from "./pages/QuizQuestion2.jsx";
+import QuizQuestion3 from "./pages/QuizQuestion3.jsx";
+import QuizQuestion4 from "./pages/QuizQuestion4.jsx";
+import QuizQuestion5 from "./pages/QuizQuestion5.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 const App = () => {
 return(
