@@ -31,7 +31,7 @@ const QuizQuestion5 = () => {
 
       try {
         // Send PATCH request to update participant's endTime
-        const response = await fetch(`http://localhost:7000/participant/${participantId}`, { 
+        const response = await fetch(`/participant/${participantId}`, { 
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

@@ -7,7 +7,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const response = await fetch("http://localhost:7000/leaderboard");
+        const response = await fetch("https://wievents.onrender.com/leaderboard");
         if (!response.ok) {
           throw new Error("Failed to fetch leaderboard");
         }
