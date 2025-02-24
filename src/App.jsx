@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Route,Routes } from "react-router-dom";
 
 import Quiz from "./pages/Quiz";
-import LeaderBoard from "./pages/LeaderBoard.jsx";
+import LeaderBoard from "./pages/Leaderboard.jsx";
 import QuizQuestion1 from "./pages/QuizQuestion1.jsx";
 import QuizQuestion2 from "./pages/QuizQuestion2.jsx";
 import QuizQuestion3 from "./pages/QuizQuestion3.jsx";
