@@ -1,0 +1,49 @@
+/* Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Playwrite+IT+Moderna&display=swap');
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #6A1B9A; /* Customize the background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo {
+  height: auto;
+  width: auto;
+  max-height: 9vh;
+}
+
+.eventName {
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-right: auto;
+  margin-left: 10px;
+  font-family: "Playwrite IT Moderna";
+transition: transform 0.3s ease, -webkit-text-stroke 0.3s ease;
+    /* Smooth transitions */
+}
+
+.eventName:hover {
+    transform: scale(1.01);
+    /* Zoom effect (10% larger) */
+    text-shadow: 0 0 10px #FFD740, 0 0 20px #FFD740;
+    /* Golden border on hover */
+}
