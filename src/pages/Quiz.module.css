@@ -1,66 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@400;500;600;700&family=Playwrite+IT+Moderna&display=swap');
+
 .quizContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+  min-height: 90vh;
+  background-color: #F5F5F5;
   padding: 20px;
+  font-family: 'Playfair Display', serif;
 }
 
-.quizTitle {
-  font-size: 24px;
+.eventHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eventName {
+  font-family: "Playwrite IT Moderna";
+  font-size: 48px;
   font-weight: bold;
-  margin-bottom: 20px;
+  color: #6A1B9A;
+  margin: 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.eventTagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #333333;
+  margin: 10px 0 0;
+  opacity: 0.8;
+}
+
+.centerDiv {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
   text-align: center;
 }
 
+.quizTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
 .quizForm {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Adds space between form elements */
+  gap: 25px;
 }
 
 .formGroup {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .formLabel {
+  font-family: 'Playfair Display', serif;
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #333333;
 }
 
 .formInput {
-  padding: 10px;
+  font-family: 'Playfair Display', serif;
+  padding: 14px;
   font-size: 16px;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid #00B0FF;
+  border-radius: 12.5px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: #FF4081;
+  outline: none;
+}
+
+.submitButton {
+  font-family: 'Playfair Display', serif;
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #FF4081;
+  border: none;
+  border-radius: 12.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #FF0066;
+  transform: scale(1.02);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quizForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.formLabel {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2E3A4E;
+}
+
+.formInput {
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  border: 2px solid #00B0FF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  font-weight: 700;
+}
+
+.formInput:focus {
+  border-color: #FF4081;
+  outline: none;
 }
 
 .submitButton {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
   color: white;
-  background-color: #007bff;
+  background-color: #FF4081;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .submitButton:hover {
-  background-color: #0056b3;
+  background-color: #FF0066;
+  transform: scale(1.02);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .quizContent {
@@ -111,4 +238,53 @@
   color: #ff0000;
   text-align: center;
   margin-top: 10px;
+}
+
+.questionText {
+  font-size: 18px;
+  color: #333333;
+  /* Dark Gray */
+  margin-bottom: 20px;
+}
+
+.formInput {
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  border: 2px solid #00B0FF;
+  /* Electric Blue */
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: #FF4081;
+  outline: none;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  75% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
 }
