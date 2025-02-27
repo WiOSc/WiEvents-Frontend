@@ -7,10 +7,12 @@ const QuizQuestion3 = () => {
   const [answer, setAnswer] = useState("");
   const [showHint, setShowHint] = useState(false);
   const [error, setError] = useState("");
+  const [shake, setShake] = useState(false); 
   const navigate = useNavigate();
 
   const handleAnswerChange = (event) => {
     setAnswer(event.target.value);
+    setError(""); 
   };
 
   const toggleHint = () => {
@@ -18,19 +20,21 @@ const QuizQuestion3 = () => {
   };
 
   const handleSubmit = () => {
-    if (answer.trim().toLowerCase() === "paris") {
-      navigate(`/quiz-question-4`); // Go to question 3
+    if (answer.trim().toLowerCase() === "berlin") {
+      navigate(`/quiz-question-4`); 
     } else {
       setError("Incorrect answer! Try again.");
+      setShake(true); 
+      setTimeout(() => setShake(false), 500); 
     }
   };
 
   return (
-      <div className={styles.quizContainer}>
-        <div className={styles.quizContent}>
+    <div className={styles.quizContainer}>
+      <div className={`${styles.quizContent} ${shake ? styles.shake : ""}`}>
         <h2 className={styles.quizTitle}>Question 3</h2>
-        <p className={styles.questionText}>What is the capital of France?</p>
-  
+        <p className={styles.questionText}>What is the capital of Germany?</p>
+
         <input
           type="text"
           value={answer}
@@ -38,21 +42,20 @@ const QuizQuestion3 = () => {
           className={styles.formInput}
           placeholder="Your answer"
         />
-  
+
         <button onClick={toggleHint} className={styles.hintButton}>
           {showHint ? "Hide Hint" : "Show Hint"}
         </button>
-        
-        {showHint && <p className={styles.hintText}>It's also called the City of Love ❤️</p>}
-  
+        {showHint && <p className={styles.hintText}>It's famous for its historical landmarks and vibrant art scene.</p>}
+
         {error && <p className={styles.errorText}>{error}</p>}
-  
+
         <button onClick={handleSubmit} className={styles.submitButton}>
           Submit
         </button>
-        </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default QuizQuestion3;

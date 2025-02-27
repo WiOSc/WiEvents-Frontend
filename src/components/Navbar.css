@@ -1,0 +1,47 @@
+/* Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Playwrite+IT+Moderna&display=swap');
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  /* overflow-y: hidden; Hide vertical scrollbar */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6A1B9A, #FF4081); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 1000; 
+}
+
+.logo {
+  height: auto;
+  width: auto;
+  max-height: 9vh;
+}
+
+.eventName {
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-right: auto;
+  margin-left: 10px;
+  font-family: "Playwrite IT Moderna";
+transition: transform 0.3s ease, -webkit-text-stroke 0.3s ease;
+overflow-y: hidden;
+}
+
+.eventName:hover {
+    transform: scale(1.01);
+    text-shadow: 0 0 10px #FFD740, 0 0 20px #FFD740;
+}

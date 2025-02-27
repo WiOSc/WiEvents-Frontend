@@ -57,27 +57,37 @@ const Quiz = () => {
 
   return (
     <div className={styles.quizContainer}>
-      <h2 className={styles.quizTitle}>Your time will start as soon as you press on start</h2>
-      <form className={styles.quizForm} onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label htmlFor="name" className={styles.formLabel}>
-            Name:
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={newParticipant.name}
-            onChange={handleInputChange}
-            required
-            className={styles.formInput}
-          />
-        </div>
-        <button type="submit" className={styles.submitButton}>
-          Start the Event!
-        </button>
-      </form>
-    </div>
+  {/* Event Name Display */}
+  <div className={styles.eventHeader}>
+    <h1 className={styles.eventName}>Decipher</h1>
+    <p className={styles.eventTagline}>Unlock the Code, Unleash Your Potential</p>
+  </div>
+
+  {/* Centered Form */}
+  <div className={styles.centerDiv}>
+    <h2 className={styles.quizTitle}>Your time will start as soon as you press Start</h2>
+    <form className={styles.quizForm} onSubmit={handleSubmit}>
+      <div className={styles.formGroup}>
+        <label htmlFor="name" className={styles.formLabel}>
+          Name:
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={newParticipant.name}
+          onChange={handleInputChange}
+          required
+          className={styles.formInput}
+          placeholder="Enter your name"
+        />
+      </div>
+      <button type="submit" className={styles.submitButton}>
+        Start the Event!
+      </button>
+    </form>
+  </div>
+</div>
   );
 };
 
