@@ -3,7 +3,7 @@
 
 body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: hidden; /* Hide vertical scrollbar */
+  /* overflow-y: hidden; Hide vertical scrollbar */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -38,6 +38,7 @@ body {
   margin-left: 10px;
   font-family: "Playwrite IT Moderna";
 transition: transform 0.3s ease, -webkit-text-stroke 0.3s ease;
+overflow-y: hidden;
 }
 
 .eventName:hover {
