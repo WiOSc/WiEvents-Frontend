@@ -38,7 +38,7 @@ body {
   margin-left: 10px;
   font-family: "Playwrite IT Moderna";
 transition: transform 0.3s ease, -webkit-text-stroke 0.3s ease;
-overflow-y: hidden;
+
 }
 
 .eventName:hover {

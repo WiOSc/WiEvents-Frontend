@@ -1,57 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
 const QuizQuestion1 = () => {
-  const [answer, setAnswer] = useState("");
-  const [showHint, setShowHint] = useState(false);
-  const [error, setError] = useState("");
-  const [shake, setShake] = useState(false); 
   const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
 
-  const handleAnswerChange = (event) => {
-    setAnswer(event.target.value);
-    setError(""); 
-  };
+  const passageContent = `Detective Julian Carter stood at the entrance of Blackwood Manor, his coat collar turned up against the biting wind. The letter he received had been cryptic, summoning him to this remote estate in the dead of night. Inside, he found Lady Eleanor Blackwood, her fingers trembling as she handed him a parchment covered in symbols.
 
-  const toggleHint = () => {
-    setShowHint(!showHint);
-  };
+"My father disappeared twenty years ago, Detective," Eleanor whispered. "Last night, I found this letter in his old study. It must mean something." 
 
-  const handleSubmit = () => {
-    if (answer.trim().toLowerCase() === "paris") {
-      navigate(`/quiz-question-2`); 
-    } else {
-      setError("Incorrect answer! Try again.");
-      setShake(true); 
-      setTimeout(() => setShake(false), 500); 
-    }
+Julian took the letter and scanned the symbols, realizing it was an old cipher.`;
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const timer = setInterval(() => {
+      if (currentIndex <= passageContent.length) {
+        setDisplayText(passageContent.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+        setShowCursor(false);
+      }
+    }, 30);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNext = () => {
+    navigate("/quiz-question-2");
   };
 
   return (
     <div className={styles.quizContainer}>
-      <div className={`${styles.quizContent} ${shake ? styles.shake : ""}`}>
-        <h2 className={styles.quizTitle}>Question 1</h2>
-        <p className={styles.questionText}>What is the capital of France?</p>
+      <div 
+        className={styles.quizContent}
+        style={{  
+          maxWidth: "800px",
+          // width: "100%",
+          marginTop: "10vh",
+          padding: "2rem",
+          paddingTop: "0rem"
+        }}
+      >
+        <h2 className={styles.quizTitle} style={{ 
+        marginBottom: "0rem", // Reduced from default
+        fontSize: "1.8rem", // Slightly larger
+        textAlign: "center" // Center aligned
+        }}>
+  The Cipher of Blackwood Manor
+</h2>
+        
+        <div 
+          className={styles.passageContainer}
+          style={{  // Internal CSS for passage container
+            marginTop:"0 rem",
+            fontSize: "1.1rem",
+            lineHeight: "1.6",
+            textAlign: "justify",
+            whiteSpace: "pre-wrap"
+          }}
+        >
+          {displayText}
+          <span 
+            style={{ 
+              borderRight: showCursor ? "2px solid black" : "none",
+              animation: "blink 1s step-end infinite",
+              marginLeft: "3px"
+            }}
+          >
+          </span>
+        </div>
 
-        <input
-          type="text"
-          value={answer}
-          onChange={handleAnswerChange}
-          className={styles.formInput}
-          placeholder="Your answer"
-        />
-
-        <button onClick={toggleHint} className={styles.hintButton}>
-          {showHint ? "Hide Hint" : "Show Hint"}
-        </button>
-        {showHint && <p className={styles.hintText}>It's also called the City of Love ❤️</p>}
-
-        {error && <p className={styles.errorText}>{error}</p>}
-
-        <button onClick={handleSubmit} className={styles.submitButton}>
-          Submit
+        <button 
+          onClick={handleNext} 
+          className={styles.submitButton}  // Using existing submit button style
+          style={{  // Additional internal CSS if needed
+            marginTop: "0rem",
+            fontSize: "1.1rem"
+          }}
+        >
+          Continue
         </button>
       </div>
     </div>
