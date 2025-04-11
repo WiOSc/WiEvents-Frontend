@@ -1,83 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
 const QuizQuestion5 = () => {
-  const [answer, setAnswer] = useState("");
-  const [showHint, setShowHint] = useState(false);
-  const [error, setError] = useState("");
-  const [shake, setShake] = useState(false); 
   const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
 
-  const handleAnswerChange = (event) => {
-    setAnswer(event.target.value);
-  };
+  const passageContent = `Outside, under the widow’s peak archway, Julian brushed aside tangled ivy and uncovered a loose stone. Beneath it, a rusted key wrapped in black silk lay alongside a final note, this one appearing more delicate, its edges burnt slightly, as if someone had tried to destroy it.`;
 
-  const toggleHint = () => {
-    setShowHint(!showHint);
-  };
-
-  const handleSubmit = async () => {
-    if (answer.trim().toLowerCase() === "amaravathi") {
-      alert("All answers have been recorded! Ending event...");
-      const participantId = localStorage.getItem("participantId"); 
-      if (!participantId) {
-        setError("No participant ID found. Please restart the quiz.");
-        return;
+  useEffect(() => {
+    let currentIndex = 0;
+    const timer = setInterval(() => {
+      if (currentIndex <= passageContent.length) {
+        setDisplayText(passageContent.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+        setShowCursor(false);
       }
+    }, 30);
 
-      const endTime = new Date().toISOString();
+    return () => clearInterval(timer);
+  }, []);
 
-      try {
-        const response = await fetch(`${API_BASE_URL}/participant/${participantId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ endTime }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to update endTime");
-        }
-
-        navigate(`/leaderboard`);
-      } catch (error) {
-        console.error("Failed to log event end time:", error);
-        setError("Error ending event. Please try again.");
-      }
-    } else {
-      setError("Incorrect answer! Try again.");
-      setShake(true); 
-      setTimeout(() => setShake(false), 500);
-    }
+  const handleNext = () => {
+    navigate("/quiz-question-6");
   };
 
   return (
     <div className={styles.quizContainer}>
-      <div className={`${styles.quizContent} ${shake ? styles.shake : ""}`}>
-        <h2 className={styles.quizTitle}>Question 5</h2>
-        <p className={styles.questionText}>What is the capital of Andhra Pradesh?</p>
+      <div 
+        className={styles.quizContent}
+        style={{  
+          maxWidth: "800px",
+          // width: "100%",
+          marginTop: "10vh",
+          padding: "2rem",
+          paddingTop: "0rem"
+        }}
+      >
+        {/* <h2 className={styles.quizTitle} style={{ 
+        marginBottom: "0rem", // Reduced from default
+        fontSize: "1.8rem", // Slightly larger
+        textAlign: "center" // Center aligned
+        }}>
+  The Cipher of Blackwood Manor
+</h2> */}
+        
+        <div 
+          className={styles.passageContainer}
+          style={{  // Internal CSS for passage container
+            marginTop:"0 rem",
+            fontSize: "1.1rem",
+            lineHeight: "1.6",
+            textAlign: "justify",
+            whiteSpace: "pre-wrap"
+          }}
+        >
+          {displayText}
+          <span 
+            style={{ 
+              borderRight: showCursor ? "2px solid black" : "none",
+              animation: "blink 1s step-end infinite",
+              marginLeft: "3px"
+            }}
+          >
+          </span>
+        </div>
 
-        <input
-          type="text"
-          value={answer}
-          onChange={handleAnswerChange}
-          className={styles.formInput}
-          placeholder="Your answer"
-        />
-
-        <button onClick={toggleHint} className={styles.hintButton}>
-          {showHint ? "Hide Hint" : "Show Hint"}
-        </button>
-
-        {showHint && <p className={styles.hintText}>It's also called the Capital</p>}
-
-        {error && <p className={styles.errorText}>{error}</p>}
-
-        <button onClick={handleSubmit} className={styles.submitButton}>
-          Submit
+        <button 
+          onClick={handleNext} 
+          className={styles.submitButton}  // Using existing submit button style
+          style={{  // Additional internal CSS if needed
+            marginTop: "0rem",
+            fontSize: "1.1rem"
+          }}
+        >
+          Continue
         </button>
       </div>
     </div>

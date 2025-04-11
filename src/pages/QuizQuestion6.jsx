@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const QuizQuestion2 = () => {
+const QuizQuestion6 = () => {
   const [answer, setAnswer] = useState("");
   const [showHint, setShowHint] = useState(false);
   const [error, setError] = useState("");
@@ -20,9 +20,8 @@ const QuizQuestion2 = () => {
   };
 
   const handleSubmit = () => {
-    const userAnswer = answer.trim().toLowerCase();
-    if (userAnswer === process.env.REACT_APP_ANSWER1?.toLowerCase()) {
-    navigate(`/quiz-question-3`);
+    if (answer.trim().toLowerCase() === "tokyo") {
+      navigate(`/quiz-question-7`); 
     } else {
       setError("Incorrect answer! Try again.");
       setShake(true); 
@@ -34,9 +33,7 @@ const QuizQuestion2 = () => {
     <div className={styles.quizContainer}>
       <div className={`${styles.quizContent} ${shake ? styles.shake : ""}`}>
         <h2 className={styles.quizTitle}>Question 2</h2>
-        <p className={styles.questionText}>
-          {process.env.REACT_APP_QUESTION1 || "Default question text here"}
-        </p>
+        <p className={styles.questionText}>What is the capital of Japan?</p>
 
         <input
           type="text"
@@ -61,4 +58,4 @@ const QuizQuestion2 = () => {
   );
 };
 
-export default QuizQuestion2;
+export default QuizQuestion6;

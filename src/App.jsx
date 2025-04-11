@@ -8,6 +8,8 @@ import QuizQuestion2 from "./pages/QuizQuestion2.jsx";
 import QuizQuestion3 from "./pages/QuizQuestion3.jsx";
 import QuizQuestion4 from "./pages/QuizQuestion4.jsx";
 import QuizQuestion5 from "./pages/QuizQuestion5.jsx";
+import QuizQuestion6 from "./pages/QuizQuestion6.jsx";
+import QuizQuestion7 from "./pages/QuizQuestion7.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 const App = () => {
@@ -22,6 +24,8 @@ return(
         <Route path="/quiz-question-3" element={<QuizQuestion3 />} />
         <Route path="/quiz-question-4" element={<QuizQuestion4 />} />
         <Route path="/quiz-question-5" element={<QuizQuestion5 />} />
+        <Route path="/quiz-question-6" element={<QuizQuestion6 />} />
+        <Route path="/quiz-question-7" element={<QuizQuestion7 />} />
       </Routes>
     </div>
 )
