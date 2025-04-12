@@ -48,7 +48,7 @@ const Question2 = () => {
         <button onClick={toggleHint} className={styles.hintButton}>
           {showHint ? "Hide Hint" : "Show Hint"}
         </button>
-        {showHint && <p className={styles.hintText}>It's known for its picturesque canals and historic architecture.</p>}
+        {showHint && <p className={styles.hintText}>🔑 WiOS</p>}
 
         {error && <p className={styles.errorText}>{error}</p>}
 

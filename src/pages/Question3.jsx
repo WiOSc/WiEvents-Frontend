@@ -49,7 +49,7 @@ const Question3 = () => {
         <button onClick={toggleHint} className={styles.hintButton}>
           {showHint ? "Hide Hint" : "Show Hint"}
         </button>
-        {showHint && <p className={styles.hintText}>It's known for its bustling streets and neon lights.</p>}
+        {showHint && <p className={styles.hintText}>Numbers,letters and a couple of symbols walk into a bar... their favourite base isnt 2 or 16</p>}
 
         {error && <p className={styles.errorText}>{error}</p>}
 

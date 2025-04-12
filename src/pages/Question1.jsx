@@ -49,7 +49,7 @@ const Question1 = () => {
         <button onClick={toggleHint} className={styles.hintButton}>
           {showHint ? "Hide Hint" : "Show Hint"}
         </button>
-        {showHint && <p className={styles.hintText}>It's known for its bustling streets and neon lights.</p>}
+        {showHint && <p className={styles.hintText}>I am the second prime number and she is one more than the second multiple of the second prime number</p>}
 
         {error && <p className={styles.errorText}>{error}</p>}
 
