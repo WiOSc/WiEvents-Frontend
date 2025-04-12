@@ -48,7 +48,7 @@ const Quiz = () => {
       localStorage.setItem("participantId", data._id);
       console.log("Stored participantId:", localStorage.getItem("participantId"));
 
-      navigate(`/para1`);
+      navigate(`/para-1`);
     } catch (error) {
       console.error("Error:", error);
       alert(`Error submitting participant: ${error.message}`);
