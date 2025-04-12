@@ -30,7 +30,7 @@ const Leaderboard = () => {
           <tr>
             <th>Rank</th>
             <th>Name</th>
-            <th>Time Taken (seconds)</th>
+            <th>Time Taken (minutes)</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +38,7 @@ const Leaderboard = () => {
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{participant.name}</td>
-              <td>{participant.timeTaken.toFixed(2)}</td>
+              <td>{(participant.timeTaken / 60).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
