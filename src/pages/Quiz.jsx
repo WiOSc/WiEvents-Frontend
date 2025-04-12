@@ -59,7 +59,7 @@ const Quiz = () => {
     <div className={styles.quizContainer}>
   {/* Event Name Display */}
   <div className={styles.eventHeader}>
-    <h1 className={styles.eventName}>Decipher</h1>
+    <h1 className={styles.eventName}>The Cipher of Blackwood Manor</h1>
     <p className={styles.eventTagline}>Unlock the Code, Unleash Your Potential</p>
   </div>
 
