@@ -3,14 +3,16 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const Para2 = () => {
+const Para1 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
-  const passageContent = `Examining the grand study, Julian noticed an old painting of Lord Blackwood hanging above the fireplace. "The silent watchman," he murmured. At exactly midnight, he pressed the frame, and with a click, a hidden compartment slid open. Inside was an aged leather journal, its pages yellowed with time. 
-  
-As he flipped through it, the ink appeared to shift under the dim candlelight. At the back, a cipher was scribbled hastily in the margins, accompanied by a peculiar symbol resembling an hourglass.`;
+  const passageContent = `Detective Julian Carter stood at the entrance of Blackwood Manor, his coat collar turned up against the biting wind. The letter he received had been cryptic, summoning him to this remote estate in the dead of night. Inside, he found Lady Eleanor Blackwood, her fingers trembling as she handed him a parchment covered in symbols.
+
+"My father disappeared twenty years ago, Detective," Eleanor whispered. "Last night, I found this letter in his old study. It must mean something." 
+
+Julian took the letter and scanned the symbols, realizing it was an old cipher.`;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -28,7 +30,7 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
   }, []);
 
   const handleNext = () => {
-    navigate("/question2");
+    navigate("/question1");
   };
 
   return (
@@ -37,23 +39,22 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
         className={styles.quizContent}
         style={{  
           maxWidth: "800px",
-          // width: "100%",
           marginTop: "10vh",
           padding: "2rem",
           paddingTop: "0rem"
         }}
       >
-        {/* <h2 className={styles.quizTitle} style={{ 
-        marginBottom: "0rem", // Reduced from default
-        fontSize: "1.8rem", // Slightly larger
-        textAlign: "center" // Center aligned
+        <h2 className={styles.quizTitle} style={{ 
+        marginBottom: "0rem", 
+        fontSize: "1.8rem",
+        textAlign: "center"
         }}>
   The Cipher of Blackwood Manor
-</h2> */}
+</h2>
         
         <div 
           className={styles.passageContainer}
-          style={{  // Internal CSS for passage container
+          style={{  
             marginTop:"0 rem",
             fontSize: "1.1rem",
             lineHeight: "1.6",
@@ -74,8 +75,8 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
 
         <button 
           onClick={handleNext} 
-          className={styles.submitButton}  // Using existing submit button style
-          style={{  // Additional internal CSS if needed
+          className={styles.submitButton}  
+          style={{  
             marginTop: "0rem",
             fontSize: "1.1rem"
           }}
@@ -87,4 +88,4 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
   );
 };
 
-export default Para2;
+export default Para1;
