@@ -38,7 +38,7 @@ const Question3 = () => {
           {process.env.REACT_APP_QUESTION3 || "Default question text here"}
         </p>
 
-        <input
+        <textarea
           type="text"
           value={answer}
           onChange={handleAnswerChange}
