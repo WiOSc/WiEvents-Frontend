@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const Para3 = () => {
+const Para2 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
-  const passageContent = `Outside, under the widow’s peak archway, Julian brushed aside tangled ivy and uncovered a loose stone. Beneath it, a rusted key wrapped in black silk lay alongside a final note, this one appearing more delicate, its edges burnt slightly, as if someone had tried to destroy it.`;
+  const passageContent = `Examining the grand study, Julian noticed an old painting of Lord Blackwood hanging above the fireplace. "The silent watchman," he murmured. At exactly midnight, he pressed the frame, and with a click, a hidden compartment slid open. Inside was an aged leather journal, its pages yellowed with time. 
+  
+As he flipped through it, the ink appeared to shift under the dim candlelight. At the back, a cipher was scribbled hastily in the margins, accompanied by a peculiar symbol resembling an hourglass.`;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -26,7 +28,7 @@ const Para3 = () => {
   }, []);
 
   const handleNext = () => {
-    navigate("/question3");
+    navigate("/question2");
   };
 
   return (
@@ -85,4 +87,4 @@ const Para3 = () => {
   );
 };
 
-export default Para3;
+export default Para2;

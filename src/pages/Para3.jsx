@@ -3,16 +3,12 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const Para1 = () => {
+const Para3 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
-  const passageContent = `Detective Julian Carter stood at the entrance of Blackwood Manor, his coat collar turned up against the biting wind. The letter he received had been cryptic, summoning him to this remote estate in the dead of night. Inside, he found Lady Eleanor Blackwood, her fingers trembling as she handed him a parchment covered in symbols.
-
-"My father disappeared twenty years ago, Detective," Eleanor whispered. "Last night, I found this letter in his old study. It must mean something." 
-
-Julian took the letter and scanned the symbols, realizing it was an old cipher.`;
+  const passageContent = `Outside, under the widow’s peak archway, Julian brushed aside tangled ivy and uncovered a loose stone. Beneath it, a rusted key wrapped in black silk lay alongside a final note, this one appearing more delicate, its edges burnt slightly, as if someone had tried to destroy it.`;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -30,7 +26,7 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
   }, []);
 
   const handleNext = () => {
-    navigate("/question1");
+    navigate("/question3");
   };
 
   return (
@@ -39,22 +35,23 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
         className={styles.quizContent}
         style={{  
           maxWidth: "800px",
+          // width: "100%",
           marginTop: "10vh",
           padding: "2rem",
           paddingTop: "0rem"
         }}
       >
-        <h2 className={styles.quizTitle} style={{ 
-        marginBottom: "0rem", 
-        fontSize: "1.8rem",
-        textAlign: "center"
+        {/* <h2 className={styles.quizTitle} style={{ 
+        marginBottom: "0rem", // Reduced from default
+        fontSize: "1.8rem", // Slightly larger
+        textAlign: "center" // Center aligned
         }}>
   The Cipher of Blackwood Manor
-</h2>
+</h2> */}
         
         <div 
           className={styles.passageContainer}
-          style={{  
+          style={{  // Internal CSS for passage container
             marginTop:"0 rem",
             fontSize: "1.1rem",
             lineHeight: "1.6",
@@ -75,8 +72,8 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
 
         <button 
           onClick={handleNext} 
-          className={styles.submitButton}  
-          style={{  
+          className={styles.submitButton}  // Using existing submit button style
+          style={{  // Additional internal CSS if needed
             marginTop: "0rem",
             fontSize: "1.1rem"
           }}
@@ -88,4 +85,4 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
   );
 };
 
-export default Para1;
+export default Para3;
