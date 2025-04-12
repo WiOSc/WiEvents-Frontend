@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const QuizQuestion1 = () => {
+const para1 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -30,7 +30,7 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
   }, []);
 
   const handleNext = () => {
-    navigate("/quiz-question-2");
+    navigate("/question1");
   };
 
   return (
@@ -39,23 +39,22 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
         className={styles.quizContent}
         style={{  
           maxWidth: "800px",
-          // width: "100%",
           marginTop: "10vh",
           padding: "2rem",
           paddingTop: "0rem"
         }}
       >
         <h2 className={styles.quizTitle} style={{ 
-        marginBottom: "0rem", // Reduced from default
-        fontSize: "1.8rem", // Slightly larger
-        textAlign: "center" // Center aligned
+        marginBottom: "0rem", 
+        fontSize: "1.8rem",
+        textAlign: "center"
         }}>
   The Cipher of Blackwood Manor
 </h2>
         
         <div 
           className={styles.passageContainer}
-          style={{  // Internal CSS for passage container
+          style={{  
             marginTop:"0 rem",
             fontSize: "1.1rem",
             lineHeight: "1.6",
@@ -76,8 +75,8 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
 
         <button 
           onClick={handleNext} 
-          className={styles.submitButton}  // Using existing submit button style
-          style={{  // Additional internal CSS if needed
+          className={styles.submitButton}  
+          style={{  
             marginTop: "0rem",
             fontSize: "1.1rem"
           }}
@@ -89,4 +88,4 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
   );
 };
 
-export default QuizQuestion1;
+export default para1;

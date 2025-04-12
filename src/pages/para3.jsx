@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const QuizQuestion5 = () => {
+const para3 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -26,7 +26,7 @@ const QuizQuestion5 = () => {
   }, []);
 
   const handleNext = () => {
-    navigate("/quiz-question-6");
+    navigate("/question3");
   };
 
   return (
@@ -85,4 +85,4 @@ const QuizQuestion5 = () => {
   );
 };
 
-export default QuizQuestion5;
+export default para3;
