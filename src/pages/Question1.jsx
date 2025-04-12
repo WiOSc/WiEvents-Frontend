@@ -33,7 +33,7 @@ const Question1 = () => {
   return (
     <div className={styles.quizContainer}>
       <div className={`${styles.quizContent} ${shake ? styles.shake : ""}`}>
-        <h2 className={styles.quizTitle}>Question 2</h2>
+        <h2 className={styles.quizTitle}>Decrypt the following</h2>
         <p className={styles.questionText}>
           {process.env.REACT_APP_QUESTION1 || "Default question text here"}
         </p>

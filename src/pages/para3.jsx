@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const para3 = () => {
+const Para3 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -85,4 +85,4 @@ const para3 = () => {
   );
 };
 
-export default para3;
+export default Para3;

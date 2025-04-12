@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const para1 = () => {
+const Para1 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -88,4 +88,4 @@ Julian took the letter and scanned the symbols, realizing it was an old cipher.`
   );
 };
 
-export default para1;
+export default Para1;

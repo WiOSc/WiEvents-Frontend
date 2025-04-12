@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const para2 = () => {
+const Para2 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -87,4 +87,4 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
   );
 };
 
-export default para2;
+export default Para2;
