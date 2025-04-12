@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Quiz.module.css";
 import { API_BASE_URL } from "../config";
 
-const QuizQuestion3 = () => {
+const para2 = () => {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -28,7 +28,7 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
   }, []);
 
   const handleNext = () => {
-    navigate("/quiz-question-4");
+    navigate("/question2");
   };
 
   return (
@@ -87,4 +87,4 @@ As he flipped through it, the ink appeared to shift under the dim candlelight. A
   );
 };
 
-export default QuizQuestion3;
+export default para2;
