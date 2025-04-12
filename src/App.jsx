@@ -24,7 +24,7 @@ return(
         <Route path="/para-2" element={<Para2 />} />
         <Route path="/question2" element={<Question2 />} />
         <Route path="/para-3" element={<Para3 />} />
-        <Route path="/question6" element={<Question3 />} />
+        <Route path="/question3" element={<Question3 />} />
         <Route path="/para-4" element={<Para4 />} />
       </Routes>
     </div>
